@@ -16,7 +16,8 @@ public class Main {
         control.generatePopulation();
 
         control.geneticAlgorithm();
-       
+        control.mutation();
+        
         control.printExperimentResults();
     }
     

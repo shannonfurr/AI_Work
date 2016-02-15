@@ -15,6 +15,11 @@ public class Controller
         generation.geneticAlgorithm();
     }
     
+    public void mutation()
+    {
+        generation.mutation();
+    }
+    
     public void printExperimentResults()
     {
         generation.printExperimentResults();

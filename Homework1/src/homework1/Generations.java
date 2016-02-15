@@ -9,6 +9,8 @@ public class Generations
     int populationSize=20;
     String[] population = new String[populationSize];
     int[] numbOnes = new int[populationSize];
+    String[] populationMutation = new String[populationSize];
+    String[] populationCrossover = new String[populationSize];
     int generations=0;
         
     public void generatePopulation()
@@ -38,7 +40,7 @@ public class Generations
         return chromo;
     }
     
-    public void geneticAlgorithm()
+    public void geneticAlgorithm() //uses fitness function & determines if program needs to stop
     {
         for(int i=0; i<populationSize; i++)
         {
@@ -59,13 +61,39 @@ public class Generations
         return ones;
     }
  
-    public void printExperimentResults()
+    public void mutation() //choose 1 random chromosome and invert 1 random bit
     {
-        System.out.println("Initial      |  Fitness |\nPopulation:  |  Values: |   ");
+        Random num = new Random();
+        int randomChromo = num.nextInt(20); //choose a random chromosome from population[]
+        int randomBit = num.nextInt(10);    //random bit to change in chromosome
+        for(int i=0; i<20; i++)
+        {
+            populationMutation[i]=population[i];
+        }
+        
+        String chromo = populationMutation[randomChromo];
+        
+        char[] chromoToMutate = chromo.toCharArray();   //turn String chromosome into char[]
+        
+        if(chromoToMutate[randomBit]=='1')      //if random bit is 1, invert to 0
+            chromoToMutate[randomBit] = '0';    
+        else
+            chromoToMutate[randomBit] = '1';    //else invert to 1
+        
+        chromo = String.valueOf(chromoToMutate);    //convert char[] back to String
+        
+        populationMutation[randomChromo] = chromo;
+    }
+    
+    public void printExperimentResults()    
+    {
+        System.out.println("Initial      |  Fitness  |  Population After  |"
+                + "\nPopulation:  |  Values:  |  Mutation:         |  ");
         System.out.println("-----------------------------------------------");
         for(int i=0; i<20; i++)
         {
-            System.out.println(population[i] + "         " + numbOnes[i]); 
+            System.out.println(population[i] + "         " + numbOnes[i] +"         " +
+                    populationMutation[i]); 
             //print population, fitnessvalues, population after crossover, population after mutation
         }
     }
