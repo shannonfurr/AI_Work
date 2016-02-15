@@ -10,15 +10,32 @@ public class Main {
         Controller control = new Controller();
         
         double pCo = 0.7; //percentage crossover
-        String crossoverMask = "1111100000";
         
-        control.generatePopulation(); //generates 20 10-bit chromosomes
+        control.generateInitialPopulation(); //randomly generates 20 10-bit chromosomes
 
         control.geneticAlgorithm(); 
-        //control.crossover(pCo); //performs crossover on population with given pCo
-        control.mutation(); //performs mutation on the population
-        
+        control.crossover(0.7); //performs crossover on population with given pCo
+        control.mutation(); //performs mutation on the population after crossover
+        control.setNewPopulation();
         control.printExperimentResults();
+        
+    //Part 2:
+        //control.crossover(0.3);
+        //control.mutation();
+        //control.printExperimentResults();
+        
+        //control.crossover(0.5);
+        //control.mutation();
+        //control.printExperimentResults();
+        
+        //control.crossover(0.9);
+        //control.mutation();
+        //control.printExperimentResults();
+        
+        //control.crossover(0);
+        //control.mutation();
+        //control.printExperimentResults();
+       
     }
     
 }

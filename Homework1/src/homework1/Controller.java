@@ -5,9 +5,9 @@ public class Controller
 {
     Generations generation = new Generations();
     
-    public void generatePopulation()
+    public void generateInitialPopulation()
     {
-        generation.generatePopulation();
+        generation.generateInitialPopulation();
     }
     
     public void geneticAlgorithm()
@@ -15,7 +15,7 @@ public class Controller
         generation.geneticAlgorithm();
     }
     
-    public void crossover(int pco)
+    public void crossover(double pco)
     {
         generation.crossover(pco);
     }
@@ -28,5 +28,9 @@ public class Controller
     public void printExperimentResults()
     {
         generation.printExperimentResults();
+    }
+    public void setNewPopulation()
+    {
+        generation.setNewPopulation();
     }
 }
