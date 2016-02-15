@@ -15,6 +15,11 @@ public class Controller
         generation.geneticAlgorithm();
     }
     
+    public void crossover(int pco)
+    {
+        generation.crossover(pco);
+    }
+    
     public void mutation()
     {
         generation.mutation();

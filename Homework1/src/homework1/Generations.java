@@ -61,6 +61,12 @@ public class Generations
         return ones;
     }
  
+    public void crossover(int pCo)  //does a crossover on chromosomes from population
+    {
+        double pairs = (pCo*20)/2;
+        
+    }
+    
     public void mutation() //choose 1 random chromosome and invert 1 random bit
     {
         Random num = new Random();
