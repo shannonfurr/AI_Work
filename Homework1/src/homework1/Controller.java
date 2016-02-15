@@ -14,4 +14,9 @@ public class Controller
     {
         generation.geneticAlgorithm();
     }
+    
+    public void printExperimentResults()
+    {
+        generation.printExperimentResults();
+    }
 }

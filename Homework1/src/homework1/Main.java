@@ -11,15 +11,13 @@ public class Main {
         
         double pCo = 0.7; //percentage crossover
         String crossoverMask = "1111100000";
-        int generations = 0;
         
-        
+        //System.out.println("Initial Population:");
         control.generatePopulation();
-        generations++;
 
         control.geneticAlgorithm();
        
-        System.out.println("Population Generated");
+        control.printExperimentResults();
     }
     
 }

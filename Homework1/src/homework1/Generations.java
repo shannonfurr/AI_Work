@@ -9,6 +9,7 @@ public class Generations
     int populationSize=20;
     String[] population = new String[populationSize];
     int[] numbOnes = new int[populationSize];
+    int generations=0;
         
     public void generatePopulation()
     {
@@ -16,6 +17,7 @@ public class Generations
         {
             population[i] = generateChromosome();
         }
+        generations++;
     }
     
     public String generateChromosome()
@@ -41,9 +43,11 @@ public class Generations
         for(int i=0; i<populationSize; i++)
         {
             numbOnes[i] = fitnessFunc(population[i]);
+            
             if(numbOnes[i]==10)
             {
                 System.out.println("Population contains chromosome 1111111111.");
+                System.out.println("Generations: "+ generations);
                 System.exit(0);
             }
         }
@@ -54,5 +58,15 @@ public class Generations
         int ones = chromo.length() - chromo.replace("1","").length();
         return ones;
     }
-    
+ 
+    public void printExperimentResults()
+    {
+        System.out.println("Initial      |  Fitness |\nPopulation:  |  Values: |   ");
+        System.out.println("-----------------------------------------------");
+        for(int i=0; i<20; i++)
+        {
+            System.out.println(population[i] + "         " + numbOnes[i]); 
+            //print population, fitnessvalues, population after crossover, population after mutation
+        }
+    }
 }
