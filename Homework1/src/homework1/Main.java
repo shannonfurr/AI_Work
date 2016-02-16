@@ -9,37 +9,24 @@ public class Main {
     {
         Controller control = new Controller();
         
-        double pCo = 0.7; //percentage crossover
-        
         control.generateInitialPopulation(); //randomly generates 20 10-bit chromosomes
-
-        for(int i=0; i<19; i++) //running the 'Genetic Algorithm' 20 times
+        
+        int generationTotals=0;
+        
+        for(int i =0; i<20; i++)
         {
-            control.geneticAlgorithm(); 
-            control.crossover(0.7); //performs crossover on population with given pCo
-            control.mutation(); //performs mutation on the population after crossover
-            control.setNewPopulation();
-            control.printExperimentResults();
+            System.out.println("============================================================");
+            generationTotals+= control.geneticAlgorithm(0.7); //compute genetic algorithm with pCo=0.7
         }
-        System.out.println("--------------------------------------------------");
-        System.out.println("Generations: " + control.getGenerations()+"\n");
+        System.out.println("============================================================");
+        System.out.println("Average Number of Generations: " + generationTotals/20 +"\n");
         
     //Part 2:
-        //control.crossover(0.3);
-        //control.mutation();
-        //control.printExperimentResults();
+        //control.geneticAlgorithm(0.3);
+        //control.geneticAlgorithm(0.5);
+        //control.geneticAlgorithm(0.9);
+        //control.geneticAlgorithm(0);
         
-        //control.crossover(0.5);
-        //control.mutation();
-        //control.printExperimentResults();
-        
-        //control.crossover(0.9);
-        //control.mutation();
-        //control.printExperimentResults();
-        
-        //control.crossover(0);
-        //control.mutation();
-        //control.printExperimentResults();
        
     }
     

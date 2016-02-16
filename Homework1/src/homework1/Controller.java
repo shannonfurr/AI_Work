@@ -10,9 +10,9 @@ public class Controller
         generation.generateInitialPopulation();
     }
     
-    public void geneticAlgorithm()
+    public int geneticAlgorithm(double Pco)
     {
-        generation.geneticAlgorithm();
+        return generation.geneticAlgorithm(Pco);
     }
     
     public void crossover(double pco)

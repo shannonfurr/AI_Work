@@ -44,19 +44,28 @@ public class Generations
         return chromo;  //return randomly generated chromosome
     }
     
-    public void geneticAlgorithm() //uses fitness function & determines if program needs to stop
+    public int geneticAlgorithm(double pco) //uses fitness function & determines if program needs to stop
     {
-        for(int i=0; i<populationSize; i++)
+        boolean found = false;
+        do //keep doing crossover & mutations until 1111111111 chromosome is made
         {
-            fitnessValue[i] = fitnessFunc(population[i]);
-            
-            if(fitnessValue[i]==10)
+            for(int i=0;i<20;i++)
             {
-                System.out.println("Population contains chromosome 1111111111.");
-                System.out.println("Generations: "+ generations);
-                System.exit(0);
+                fitnessValue[i] = fitnessFunc(population[i]);
+                crossover(pco);
+                mutation();
+                
+                if(fitnessValue[i]==10)
+                    found=true;
             }
-        }
+            printExperimentResults();
+            setNewPopulation();
+        }while(found!=true);
+        
+        //once chromosome 1111111111 is found do:
+        System.out.println("Population contains chromosome 1111111111.");
+        System.out.println("Generations: "+ generations);
+        return generations;
     }
     
     public int fitnessFunc(String chromo) //finds # of 1's in chromosome
