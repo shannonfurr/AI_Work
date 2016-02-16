@@ -80,14 +80,11 @@ public class Generations
             String chromo1 = populationCrossover[i];
             String chromo2 = populationCrossover[i+1];
             
-            String chromo1end = chromo1.substring(5);
-            String chromo2end = chromo2.substring(5);
+            String chromo1end = chromo1.substring(5,10);
+            String chromo2end = chromo2.substring(5,10);
             
-            chromo1.replace(chromo1end, chromo2end);
-            chromo2.replace(chromo2end, chromo1end);  
-            
-            populationCrossover[i] = chromo1;
-            populationCrossover[i+1] = chromo2;
+            populationCrossover[i] = chromo1.replace(chromo1end, chromo2end);
+            populationCrossover[i+1] = chromo2.replace(chromo2end, chromo1end);
         }
     }
     
@@ -117,9 +114,10 @@ public class Generations
     
     public void printExperimentResults()    
     {
+        System.out.println("--------------------------------------------------");
         System.out.println("| Fitness | Population After | Population After  |"
-                + "\n| Values: | Crossover        | Mutation:         |  ");
-        System.out.println("-----------------------------------------------");
+                + "\n| Values: | Crossover:       | Mutation:         |  ");
+        System.out.println("--------------------------------------------------");
         for(int i=0; i<20; i++)
         {
             System.out.println("    " + numbOnes[i] +"          " + populationCrossover[i] 
