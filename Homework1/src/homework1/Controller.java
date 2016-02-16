@@ -33,4 +33,9 @@ public class Controller
     {
         generation.setNewPopulation();
     }
+    
+    public int getGenerations()
+    {
+        return generation.getGenerations();
+    }
 }

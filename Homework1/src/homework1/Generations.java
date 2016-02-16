@@ -7,12 +7,12 @@ import java.util.Random;
 public class Generations 
 {
     int populationSize=20;
-    String[] initialPopulation = new String[populationSize];
-    String[] population = new String[populationSize];
-    int[] numbOnes = new int[populationSize];
-    String[] populationMutation = new String[populationSize];
-    String[] populationCrossover = new String[populationSize];
-    int generations=0;
+    String[] initialPopulation = new String[populationSize]; 
+    String[] population = new String[populationSize]; //starting population, before crossover & mutations
+    int[] fitnessValue = new int[populationSize]; //fitnessValue = # of 1's
+    String[] populationCrossover = new String[populationSize]; // population after crossover
+    String[] populationMutation = new String[populationSize]; // population after mutation
+    int generations=1; //set equal to 1 to include the initial population
         
     public void generateInitialPopulation()
     {
@@ -20,7 +20,7 @@ public class Generations
         for(int i=0; i<populationSize; i++)
         {
             initialPopulation[i] = generateChromosome();
-            population[i] = initialPopulation[i];
+            population[i] = initialPopulation[i];   //store initialPop into population[] for calculations
             System.out.println(initialPopulation[i]);
         }
         System.out.println("-------------");
@@ -29,11 +29,11 @@ public class Generations
     public String generateChromosome()
     {
         Random rand = new Random();
-        int decimalNum = rand.nextInt(513);
-        String chromo = Integer.toBinaryString(decimalNum);
+        int decimalNum = rand.nextInt(513); //generate random number from 0 to 512
+        String chromo = Integer.toBinaryString(decimalNum); //convert number to binary 
 
         int bits = chromo.length();
-        if(bits!=10)
+        if(bits!=10)    //if length of binary # isn't 10, add appropriate amount of zeros to the beginning
         {
             int zeros = 10 - bits;
             for(int i = zeros; i>0; i--)
@@ -41,23 +41,22 @@ public class Generations
                 chromo = "0"+chromo;
             }
         }
-        return chromo;
+        return chromo;  //return randomly generated chromosome
     }
     
     public void geneticAlgorithm() //uses fitness function & determines if program needs to stop
     {
         for(int i=0; i<populationSize; i++)
         {
-            numbOnes[i] = fitnessFunc(population[i]);
+            fitnessValue[i] = fitnessFunc(population[i]);
             
-            if(numbOnes[i]==10)
+            if(fitnessValue[i]==10)
             {
                 System.out.println("Population contains chromosome 1111111111.");
                 System.out.println("Generations: "+ generations);
                 System.exit(0);
             }
         }
-        generations++;
     }
     
     public int fitnessFunc(String chromo) //finds # of 1's in chromosome
@@ -66,9 +65,11 @@ public class Generations
         return ones;
     }
  
-    public void crossover(double pCo)  //does a crossover on chromosomes from population
-    {
-        String crossoverMask = "1111100000";
+    public void crossover(double pCo)  //does a crossover on chromosomes from population[].
+    {                               // As for how the chromosomes are selected for crossover
+                                    // they are the first pCo*20 chromosomes in population[],
+                                    // the rest are replicated over.
+
         double pairs = (pCo*20)/2;  //this is how many pairs will be crossed-over 
         
         for (int i=0; i<20; i++)
@@ -88,8 +89,8 @@ public class Generations
         }
     }
     
-    public void mutation() //choose 1 random chromosome and invert 1 random bit (from population after crossover)
-    {
+    public void mutation() //choose 1 random chromosome and invert 1 random bit 
+    {                        //(from population after crossover)
         Random num = new Random();
         int randomChromo = num.nextInt(20); //choose a random chromosome from population[]
         int randomBit = num.nextInt(10);    //random bit to change in chromosome
@@ -120,9 +121,9 @@ public class Generations
         System.out.println("--------------------------------------------------");
         for(int i=0; i<20; i++)
         {
-            System.out.println("    " + numbOnes[i] +"          " + populationCrossover[i] 
+            System.out.println("    " + fitnessValue[i] +"          " + populationCrossover[i] 
                     + "         " + populationMutation[i]); 
-            //print population, fitnessvalues, population after crossover, population after mutation
+            //prints fitness values, population after crossover, population after mutation
         }
     }
     
@@ -130,7 +131,13 @@ public class Generations
     {
         for(int i=0; i<20; i++)
         {
-            population[i] = populationMutation[i];
+            population[i] = populationMutation[i]; //set pop after mutation as new pop
         }
+        generations++; //increment generations (already includes initial population)
+    }
+    
+    public int getGenerations()
+    {
+        return generations;
     }
 }

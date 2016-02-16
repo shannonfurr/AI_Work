@@ -13,11 +13,16 @@ public class Main {
         
         control.generateInitialPopulation(); //randomly generates 20 10-bit chromosomes
 
-        control.geneticAlgorithm(); 
-        control.crossover(0.7); //performs crossover on population with given pCo
-        control.mutation(); //performs mutation on the population after crossover
-        control.setNewPopulation();
-        control.printExperimentResults();
+        for(int i=0; i<19; i++) //running the 'Genetic Algorithm' 20 times
+        {
+            control.geneticAlgorithm(); 
+            control.crossover(0.7); //performs crossover on population with given pCo
+            control.mutation(); //performs mutation on the population after crossover
+            control.setNewPopulation();
+            control.printExperimentResults();
+        }
+        System.out.println("--------------------------------------------------");
+        System.out.println("Generations: " + control.getGenerations()+"\n");
         
     //Part 2:
         //control.crossover(0.3);
