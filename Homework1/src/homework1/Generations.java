@@ -23,7 +23,7 @@ public class Generations
             population[i] = initialPopulation[i];   //store initialPop into population[] for calculations
             System.out.println(initialPopulation[i]);
         }
-        System.out.println("-------------");
+        System.out.println("-------------------------------\n");
     }
     
     public String generateChromosome()
@@ -52,18 +52,18 @@ public class Generations
             for(int i=0;i<20;i++)
             {
                 fitnessValue[i] = fitnessFunc(population[i]);
-                crossover(pco);
-                mutation();
                 
                 if(fitnessValue[i]==10)
                     found=true;
             }
-            printExperimentResults();
+            crossover(pco);
+            mutation();
+            //printExperimentResults();
             setNewPopulation();
         }while(found!=true);
         
         //once chromosome 1111111111 is found do:
-        System.out.println("Population contains chromosome 1111111111.");
+        //System.out.println("Population contains chromosome 1111111111.");
         System.out.println("Generations: "+ generations);
         return generations;
     }

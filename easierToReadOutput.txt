@@ -1,0 +1,345 @@
+run:
+Initial Population: 
+0011101011
+0010000001
+0100101100
+0100110100
+0111000110
+0010100110
+0000101100
+0111000111
+0011111101
+0111100000
+0110000000
+0111010110
+0010100111
+0111001101
+0011011000
+0100111111
+0000100101
+0111110111
+0101111110
+0100110001
+-------------------------------
+
+pco = 0.7 runs: 
+-------------------
+Run: 1
+Generations: 1116
+-------------------
+Run: 2
+Generations: 1130
+-------------------
+Run: 3
+Generations: 1131
+-------------------
+Run: 4
+Generations: 1132
+-------------------
+Run: 5
+Generations: 1133
+-------------------
+Run: 6
+Generations: 1134
+-------------------
+Run: 7
+Generations: 1135
+-------------------
+Run: 8
+Generations: 1136
+-------------------
+Run: 9
+Generations: 1137
+-------------------
+Run: 10
+Generations: 1138
+-------------------
+Run: 11
+Generations: 1139
+-------------------
+Run: 12
+Generations: 1140
+-------------------
+Run: 13
+Generations: 1141
+-------------------
+Run: 14
+Generations: 1142
+-------------------
+Run: 15
+Generations: 1143
+-------------------
+Run: 16
+Generations: 1144
+-------------------
+Run: 17
+Generations: 1145
+-------------------
+Run: 18
+Generations: 1146
+-------------------
+Run: 19
+Generations: 1147
+-------------------
+Run: 20
+Generations: 1148
+===================================================
+Average Number of Generations with pCo=0.7: 1137
+===================================================
+pco = 0.3 runs: 
+-------------------
+Run: 1
+Generations: 1149
+-------------------
+Run: 2
+Generations: 1150
+-------------------
+Run: 3
+Generations: 1151
+-------------------
+Run: 4
+Generations: 1152
+-------------------
+Run: 5
+Generations: 1153
+-------------------
+Run: 6
+Generations: 1154
+-------------------
+Run: 7
+Generations: 1155
+-------------------
+Run: 8
+Generations: 1156
+-------------------
+Run: 9
+Generations: 1157
+-------------------
+Run: 10
+Generations: 1158
+-------------------
+Run: 11
+Generations: 1159
+-------------------
+Run: 12
+Generations: 1160
+-------------------
+Run: 13
+Generations: 1161
+-------------------
+Run: 14
+Generations: 1162
+-------------------
+Run: 15
+Generations: 1163
+-------------------
+Run: 16
+Generations: 1164
+-------------------
+Run: 17
+Generations: 1165
+-------------------
+Run: 18
+Generations: 1166
+-------------------
+Run: 19
+Generations: 1167
+-------------------
+Run: 20
+Generations: 1168
+===================================================
+Average Number of Generations with pCo=0.3: 2296
+===================================================
+pco = 0.5 runs: 
+-------------------
+Run: 1
+Generations: 1169
+-------------------
+Run: 2
+Generations: 1170
+-------------------
+Run: 3
+Generations: 1171
+-------------------
+Run: 4
+Generations: 1172
+-------------------
+Run: 5
+Generations: 1173
+-------------------
+Run: 6
+Generations: 1174
+-------------------
+Run: 7
+Generations: 1175
+-------------------
+Run: 8
+Generations: 1176
+-------------------
+Run: 9
+Generations: 1177
+-------------------
+Run: 10
+Generations: 1178
+-------------------
+Run: 11
+Generations: 1179
+-------------------
+Run: 12
+Generations: 1180
+-------------------
+Run: 13
+Generations: 1181
+-------------------
+Run: 14
+Generations: 1182
+-------------------
+Run: 15
+Generations: 1183
+-------------------
+Run: 16
+Generations: 1184
+-------------------
+Run: 17
+Generations: 1185
+-------------------
+Run: 18
+Generations: 1186
+-------------------
+Run: 19
+Generations: 1187
+-------------------
+Run: 20
+Generations: 1188
+===================================================
+Average Number of Generations with pCo=0.5: 3474
+===================================================
+pco = 0.9 runs: 
+-------------------
+Run: 1
+Generations: 1189
+-------------------
+Run: 2
+Generations: 1190
+-------------------
+Run: 3
+Generations: 1191
+-------------------
+Run: 4
+Generations: 1192
+-------------------
+Run: 5
+Generations: 1237
+-------------------
+Run: 6
+Generations: 1239
+-------------------
+Run: 7
+Generations: 1243
+-------------------
+Run: 8
+Generations: 1245
+-------------------
+Run: 9
+Generations: 1247
+-------------------
+Run: 10
+Generations: 1249
+-------------------
+Run: 11
+Generations: 1251
+-------------------
+Run: 12
+Generations: 1253
+-------------------
+Run: 13
+Generations: 1305
+-------------------
+Run: 14
+Generations: 1306
+-------------------
+Run: 15
+Generations: 1307
+-------------------
+Run: 16
+Generations: 1308
+-------------------
+Run: 17
+Generations: 1309
+-------------------
+Run: 18
+Generations: 1310
+-------------------
+Run: 19
+Generations: 1312
+-------------------
+Run: 20
+Generations: 1314
+===================================================
+Average Number of Generations with pCo=0.9: 4734
+===================================================
+pco = 0 runs: 
+-------------------
+Run: 1
+Generations: 1727
+-------------------
+Run: 2
+Generations: 1728
+-------------------
+Run: 3
+Generations: 1729
+-------------------
+Run: 4
+Generations: 1730
+-------------------
+Run: 5
+Generations: 1731
+-------------------
+Run: 6
+Generations: 1732
+-------------------
+Run: 7
+Generations: 1733
+-------------------
+Run: 8
+Generations: 1734
+-------------------
+Run: 9
+Generations: 1735
+-------------------
+Run: 10
+Generations: 1736
+-------------------
+Run: 11
+Generations: 1737
+-------------------
+Run: 12
+Generations: 1738
+-------------------
+Run: 13
+Generations: 1739
+-------------------
+Run: 14
+Generations: 1740
+-------------------
+Run: 15
+Generations: 1741
+-------------------
+Run: 16
+Generations: 1742
+-------------------
+Run: 17
+Generations: 1743
+-------------------
+Run: 18
+Generations: 1744
+-------------------
+Run: 19
+Generations: 1745
+-------------------
+Run: 20
+Generations: 1746
+===================================================
+Average Number of Generations with pCo=0: 6471
+===================================================
+BUILD SUCCESSFUL (total time: 0 seconds)
