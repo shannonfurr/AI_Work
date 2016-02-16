@@ -14,28 +14,4 @@ public class Controller
     {
         return generation.geneticAlgorithm(Pco);
     }
-    
-    public void crossover(double pco)
-    {
-        generation.crossover(pco);
-    }
-    
-    public void mutation()
-    {
-        generation.mutation();
-    }
-    
-    public void printExperimentResults()
-    {
-        generation.printExperimentResults();
-    }
-    public void setNewPopulation()
-    {
-        generation.setNewPopulation();
-    }
-    
-    public int getGenerations()
-    {
-        return generation.getGenerations();
-    }
 }
