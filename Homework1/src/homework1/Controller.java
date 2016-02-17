@@ -14,4 +14,9 @@ public class Controller
     {
         return generation.geneticAlgorithm(Pco);
     }
+    
+    public void setInitialPopulation()
+    {
+        generation.setInitialPopulation();
+    }
 }

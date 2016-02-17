@@ -44,8 +44,9 @@ public class Generations
         return chromo;  //return randomly generated chromosome
     }
     
-    public int geneticAlgorithm(double pco) //uses fitness function & determines if program needs to stop
+    public int geneticAlgorithm(double pco) //performs experiment until 1111111111 chromosome is found
     {
+        generations=1;
         boolean found = false;
         do //keep doing crossover & mutations until 1111111111 chromosome is made
         {
@@ -64,7 +65,7 @@ public class Generations
         
         //once chromosome 1111111111 is found do:
         //System.out.println("Population contains chromosome 1111111111.");
-        System.out.println("Generations: "+ generations);
+        System.out.println("Generations: "+ generations); //found 1111111111 chromosome, prints # generations
         return generations;
     }
     
@@ -145,8 +146,11 @@ public class Generations
         generations++; //increment generations (already includes initial population)
     }
     
-    public int getGenerations()
+    public void setInitialPopulation()
     {
-        return generations;
+        for(int i=0; i<20; i++)
+        {
+            population[i] = initialPopulation[i]; //set pop after mutation as new pop
+        }
     }
 }
