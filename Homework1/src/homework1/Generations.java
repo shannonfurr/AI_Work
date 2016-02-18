@@ -2,7 +2,10 @@
 package homework1;
 
 import java.util.Random;
-
+import java.util.Scanner;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.Writer;
 
 public class Generations 
 {
@@ -20,7 +23,7 @@ public class Generations
         for(int i=0; i<populationSize; i++)
         {
             initialPopulation[i] = generateChromosome();
-            population[i] = initialPopulation[i];   //store initialPop into population[] for calculations
+            //population[i] = initialPopulation[i];   //store initialPop into population[] for calculations
             System.out.println(initialPopulation[i]);
         }
         System.out.println("-------------------------------\n");
@@ -47,6 +50,7 @@ public class Generations
     public int geneticAlgorithm(double pco) //performs experiment until 1111111111 chromosome is found
     {
         generations=1;
+        setInitialPopulation();
         boolean found = false;
         do //keep doing crossover & mutations until 1111111111 chromosome is made
         {
@@ -66,6 +70,7 @@ public class Generations
         //once chromosome 1111111111 is found do:
         //System.out.println("Population contains chromosome 1111111111.");
         System.out.println("Generations: "+ generations); //found 1111111111 chromosome, prints # generations
+        save();
         return generations;
     }
     
@@ -152,5 +157,27 @@ public class Generations
         {
             population[i] = initialPopulation[i]; //set pop after mutation as new pop
         }
+    }
+    
+    public void save()
+    {
+        Writer out = null;
+      
+        try
+        {
+            out = new BufferedWriter(new FileWriter("data.txt",true));
+            out.write(Integer.toString(generations)+"\n");
+           
+            out.close();
+        }
+        catch(Exception e)
+        {
+            System.out.println("Could not save:" +
+            e.toString());
+        }
+    }
+    public int getGenerations()
+    {
+        return generations;
     }
 }

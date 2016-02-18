@@ -2,6 +2,7 @@
 // Homework1
 
 package homework1;
+import java.io.*;
 
 public class Main {
     public static void main(String[] args)
@@ -27,7 +28,6 @@ public class Main {
 
     //Part 2:
         System.out.println("pco = 0.3 runs: ");
-        control.setInitialPopulation();
         for(int i =1; i<=20; i++)
         {
             System.out.println("-------------------");
@@ -39,7 +39,6 @@ public class Main {
         System.out.println("===================================================");
 
         System.out.println("pco = 0.5 runs: ");
-        control.setInitialPopulation();
         for(int i =1; i<=20; i++)
         {
             System.out.println("-------------------");
@@ -51,7 +50,6 @@ public class Main {
         System.out.println("===================================================");
 
         System.out.println("pco = 0.9 runs: ");
-        control.setInitialPopulation();
         for(int i =1; i<=20; i++)
         {
             System.out.println("-------------------");
@@ -63,7 +61,6 @@ public class Main {
         System.out.println("===================================================");
 
         System.out.println("pco = 0 runs: ");
-        control.setInitialPopulation();
         for(int i =1; i<=20; i++)
         {
             System.out.println("-------------------");
